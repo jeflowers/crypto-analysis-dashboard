@@ -1,98 +1,62 @@
-# Cryptocurrency Analysis Dashboard
+# Card Alert Interface for Fraud Analytics
 
-A cryptocurrency market data analysis dashboard built as a resume project to demonstrate full-stack development skills using modern technologies.
+This project integrates CardAlert's workflow with the Fraud Analytics (FA) system. The integration aims to improve detection times and automate manual processes around fraud detection and management.
 
 ## Project Overview
 
-This dashboard application was created to showcase capabilities in:
+The primary goals of this project are:
 
-- Frontend development with React and data visualization
-- Backend architecture and API integration
-- Database design with both SQL and NoSQL systems
-- Container orchestration and infrastructure automation
-- CI/CD implementation
+1. Add counterfeit cards identified by FA to CardAlert's database
+2. Efficiently transmit CardAlert Suspect Transactions directly to NYCE
+3. Provide faster Suspect Transaction response times from NYCE to CardAlert
+4. Enable faster fraud detection for quicker identification of Block & Reissue cards
+5. Send Block & Reissue cards directly to FA with rules to action cards at lower scores or block them altogether
 
-The application allows users to track and analyze cryptocurrencies, including Bitcoin, Ethereum, and other altcoins, with features like historical price visualization and market trend analysis.
+## Key Features
 
-## Technologies Demonstrated
+- Processing of suspect transaction files from CardAlert
+- Handling of Block and Reissue transaction files
+- Generation of Fraud cases files for CardAlert
+- Integration with hotlist management for quick fraud response
+- Automated workflows for improved efficiency
 
-### Frontend
-- React.js with functional components and hooks
-- TailwindCSS for responsive UI design
-- Chart.js for data visualization components
+## Technology Stack
 
-### Backend
-- Microservices approach with containerized services
-- API integration with CoinMarketCap
-- Data processing and transformation pipelines
+- **Backend:** Node.js with Express
+- **Frontend:** HTML, JavaScript with Tailwind CSS
+- **Database:** Oracle
+- **Testing:** Jest for unit and integration tests
 
-### Databases
-- PostgreSQL (RDBMS) for relational data modeling
-- MongoDB (NoSQL) for time-series market data
-
-### Infrastructure & DevOps
-- Kubernetes concepts for container orchestration
-- Podman for container management
-- Ansible for infrastructure as code
-- GitHub Actions for CI/CD workflow automation
-
-## Features
-
-### Data Visualization
-- Multi-timeframe price charts (24h, 7d, 30d, 1y, 5y)
-- Comparative analysis between multiple cryptocurrencies
-- Market trends identification
-
-### API Integration
-- CoinMarketCap API integration
-- Data caching and transformation
-- Error handling and rate limit management
-
-### Portfolio Concepts
-- Watchlist functionality
-- Performance tracking simulations
-- Historical analysis tools
-
-## Repository Structure
-
-The repository demonstrates a well-organized project structure:
+## Project Structure
 
 ```
-├── frontend/             # React application
-├── backend/              # API services
-├── infrastructure/       # Kubernetes manifests and Ansible playbooks
-├── database/             # Schema definitions and migrations
-└── .github/workflows/    # CI/CD pipeline configurations
+card-alert-interface/
+│── backend/                   # Backend API (Node.js, Express, Oracle DB)
+│── frontend/                  # Frontend (HTML, JavaScript, Tailwind CSS)
+│── database/                  # Database scripts (Oracle)
+│── docs/                      # Documentation
+│── tests/                     # Unit & integration tests
 ```
 
 ## Getting Started
 
-This is a resume demonstration project. To explore the codebase:
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Set up environment variables in `.env`
+4. Run the database setup scripts in `database/`
+5. Start the development server with `npm run dev`
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jeflowers/crypto-analysis-dashboard.git
-   cd crypto-analysis-dashboard
-   ```
+## Documentation
 
-2. Review the code structure and implementation details in each component.
+For more detailed information, please refer to the following documentation:
+- [API Documentation](./docs/API_Documentation.md)
+- [File Formats](./docs/File_Formats.md)
+- [Integration Setup](./docs/Integration_Setup.md)
 
-## Skills Demonstrated
+## Contributing
 
-- Modern JavaScript/TypeScript development
-- Responsive UI design
-- RESTful API integration
-- Database modeling and query optimization
-- Container orchestration concepts
-- Infrastructure as code
-- CI/CD workflow design
-- Security best practices
-- System architecture design
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-## Contact
+## License
 
-Project Link: [https://github.com/jeflowers/crypto-analysis-dashboard](https://github.com/jeflowers/crypto-analysis-dashboard)
-
----
-
-*This project is for demonstration purposes only as part of a professional portfolio.*
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
